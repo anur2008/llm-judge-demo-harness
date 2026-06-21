@@ -9,9 +9,6 @@ golden reference set using **Claude on Amazon Bedrock**. One dependency: `boto3`
 - `answers_to_judge_DEMO.json` - candidate answers to score (strong / partial / wrong-but-fluent plants)
 - `judge_results.json` - written after each run (for screenshots / slides)
 
-> All data is fictional ("Northwind Steelworks / Atlas ERP"). Nothing here is
-> tied to any real product or customer. The `demo_note` / `expected_band`
-> fields in the answers file are **speaker-only** and are never sent to the judge.
 
 ## Setup
 ```bash
