@@ -1,0 +1,307 @@
+{
+  "metadata": {
+    "project": "Atlas ERP Implementation - Northwind Steelworks",
+    "board": "Regression 1.2.0 (Executive Dashboard)",
+    "data_period": "January 20-21, 2026 (snapshot)",
+    "generated": "2026-06-15",
+    "purpose": "SYNTHETIC golden reference set for a conference demo on evaluating qualitative response quality (completeness, accuracy, relevance). All names, numbers, and facts are fictional and invented for the talk. Any resemblance to a real project is coincidental.",
+    "total_questions": 18,
+    "source_files": [
+      "artifacts/board=20451/version=30112/Regression 1.2.0.kb.txt",
+      "artifacts/board=20451/version=30112/Regression 1.2.0.commentary.txt",
+      "grounding-report.md",
+      "input/files (synthetic source documents and transcripts)"
+    ]
+  },
+  "qa_pairs": [
+    {
+      "id": "Q01",
+      "category": "Project Health",
+      "difficulty": "factual",
+      "evaluation_focus": ["accuracy", "specificity"],
+      "question": "What is the current project health score for the Atlas ERP implementation and what does it indicate?",
+      "reference_answer": "The Atlas ERP implementation has a health score of 46.5 out of 100, placing it in the Critical range (0-49). This score is calculated using a weighted algorithm based on event counts from 542 extracted notes: starting from a base of 70, deductions are applied for blockers (114 events, -18.8 points), risks (24 events, -2.0 points), and concerns (73 events, -3.7 points), partially offset by accomplishments (28 events, +0.9 points). The Critical classification signals that the project requires immediate executive intervention. The low resolution rate of 12.4% and net accumulation of +171 open items further reinforce the critical state.",
+      "key_facts": [
+        "Health score: 46.5 / 100",
+        "Classification: Critical (0-49 range)",
+        "114 active blockers",
+        "24 identified risks",
+        "73 active concerns",
+        "28 accomplishments",
+        "Resolution rate: 12.4%",
+        "Net open items: +171"
+      ]
+    },
+    {
+      "id": "Q02",
+      "category": "Integration Issues",
+      "difficulty": "explanatory",
+      "evaluation_focus": ["completeness", "accuracy"],
+      "question": "What are the critical integration issues between Atlas ERP, MES, and EDI systems that are threatening go-live readiness?",
+      "reference_answer": "Three major integration problem areas are threatening go-live: (1) MES-Atlas Performance Crisis - the integration between the Manufacturing Execution System and Atlas ERP is experiencing 9-minute delays affecting scheduling state information, cell mode codes, tag attributes, and test results (Notes N-318, N-441). This may require a production environment upgrade similar to the Cedar Logistics project, which would take approximately 3 weeks. (2) EDI Integration Gaps - Cardinal Wire chemistry files are missing manganese values (N-205), product-specific chemistry requirements are not supported by the EDI system affecting all customers including Cardinal Wire, Brookline Metals, Vantage Steel, and Tessa Industrial (N-206, N-209), and Cardinal Wire 863 EDI file mappings have critical discrepancies between staging and production environments (N-512). These gaps could result in mismatched certificates versus actual shipments, causing customer complaints. (3) Sales Order Rolling Schedule disconnect - MRP automatically changes committed customer delivery dates, breaking sales order integrity (Notes N-301, N-447). Collectively, 71.8% of all project activity (389 of 542 events) falls in the Technical workstream, reflecting the intensity of these integration resolution efforts.",
+      "key_facts": [
+        "MES-Atlas: 9-minute delays",
+        "Possible environment upgrade required: 3-week lead time",
+        "EDI gap: Cardinal Wire missing manganese values",
+        "EDI gap: product-specific chemistry not supported (all customers affected)",
+        "Cardinal Wire 863 EDI mapping failures between staging and production",
+        "MRP auto-reassigning committed customer dates",
+        "Technical workstream: 71.8% of all events"
+      ]
+    },
+    {
+      "id": "Q03",
+      "category": "Governance & Decisions",
+      "difficulty": "explanatory",
+      "evaluation_focus": ["accuracy", "completeness"],
+      "question": "What was the outcome of the Mock 2 Go/No-Go decision and what conditions or concerns surrounded it?",
+      "reference_answer": "The Mock 2 Go/No-Go decision was unanimously approved by the steering committee (participants: Dana Whitfield, Paul Brennan, Sofia Reyes, Tomas Silva, Brett Lawson, Grace Liang, Marcus Webb), as documented in Note N-388. The approval covered Northwind legal entity configurations, production copy to UAT, and phased master data loading throughout January. However, the approval was granted despite open critical bugs still remaining unresolved, indicating a high risk tolerance driven by pressure to maintain the February 16, 2026 go-live date. The decision established a three-stage gate process: Stage 1 - Mock 2 completed (January 5th, approved); Stage 2 - Late January transactional data validation; Stage 3 - February 2nd final go-live decision point. This pattern of approving progress despite open issues was also observed in the code freeze decision, where multiple deployments were still planned post-freeze, and in multiple bug deferrals to post-go-live.",
+      "key_facts": [
+        "Mock 2 approved unanimously",
+        "Approved despite open critical bugs",
+        "Three-stage gate: Mock 2 (done), late January, February 2nd",
+        "February 16, 2026 confirmed go-live date",
+        "Approval covers Northwind legal entity configs and master data loading"
+      ]
+    },
+    {
+      "id": "Q04",
+      "category": "Cutover Planning",
+      "difficulty": "factual",
+      "evaluation_focus": ["accuracy", "specificity"],
+      "question": "What is the status of cutover planning and how many tasks have been initiated and completed?",
+      "reference_answer": "Cutover planning is actively progressing with 198 cutover tasks initiated, of which 14 have been completed as of the data snapshot period (January 20-21, 2026). Reviews are held twice weekly. Omar Haddad (PMO Coordinator) is developing a comprehensive tracking dashboard covering all tasks, configurations, open bugs, owners, due dates, and validations (Note N-470). The cutover began with configuration activities starting January 9th as the first day of cutover (N-422), and data migration was scheduled to start early the following week (N-431). The three-stage gate process - Mock 2 approval, late-January transactional validation, and February 2nd final go/no-go - provides structured decision checkpoints. However, finance activities (specifically inventory counts and cost roll) have been flagged as the most critical items that could prevent furnace restart, with Finance Lead Tomas Silva raising concern about potential delays (Note N-244).",
+      "key_facts": [
+        "198 cutover tasks initiated",
+        "14 of 198 tasks completed",
+        "Twice-weekly reviews",
+        "Finance activities (inventory counts, cost roll) are highest-risk cutover items",
+        "Configuration activities started Jan 9 as day 1 of cutover",
+        "Data migration scheduled early following week"
+      ]
+    },
+    {
+      "id": "Q05",
+      "category": "Stakeholder Engagement",
+      "difficulty": "factual",
+      "evaluation_focus": ["accuracy", "relevance"],
+      "question": "Who are the most engaged stakeholders in the Atlas ERP implementation and what roles do they play?",
+      "reference_answer": "Stakeholder engagement is measured by mention count across all 542 extracted events. The top 10 stakeholders are: (1) Dana Whitfield - PMO Lead, 241 mentions (highest, reflecting her central coordination role); (2) Arjun Mehta - Technical Lead, 96 mentions (intensive bug resolution); (3) Lena Fischer - Integration Lead, 88 mentions (EDI/MES integration issues); (4) Paul Brennan - Project Lead, 74 mentions; (5) Sofia Reyes - Business Process Owner, 49 mentions; (6) Omar Haddad - Configuration Lead, 45 mentions; (7) Grace Liang - Technical Lead, 41 mentions; (8) Tomas Silva - Finance Lead, 38 mentions; (9) Nina Kowalski - Business Analyst, 35 mentions; (10) Victor Owens - QA Lead, 33 mentions. The high engagement of Dana Whitfield, Arjun Mehta, and Lena Fischer aligns directly with the project's dominant challenge areas (PMO coordination, technical bugs, integration issues).",
+      "key_facts": [
+        "Dana Whitfield: 241 mentions (PMO Lead)",
+        "Arjun Mehta: 96 mentions (Technical Lead)",
+        "Lena Fischer: 88 mentions (Integration Lead)",
+        "Paul Brennan: 74 mentions (Project Lead)",
+        "Sofia Reyes: 49 mentions (Business Process Owner)",
+        "Mention count used as engagement proxy"
+      ]
+    },
+    {
+      "id": "Q06",
+      "category": "Issue Velocity",
+      "difficulty": "analytical",
+      "evaluation_focus": ["completeness", "relevance"],
+      "question": "What does the net open item trend indicate about the project's ability to achieve go-live readiness?",
+      "reference_answer": "The net open item trend is deeply concerning. During the January 20-21, 2026 snapshot period, 238 new items were opened while only 67 were resolved, producing a net accumulation of +171 open items. This corresponds to a resolution rate of only 12.4% - meaning roughly 9 out of 10 issues raised remain unresolved. Of the 542 total events, 475 (87.6%) are either open or in progress, while only 67 (12.4%) are resolved or closed. This pattern indicates that issue generation is far outpacing issue resolution capacity. For go-live readiness, this velocity is unsustainable: if the accumulation rate is not reversed, the February 16, 2026 target is at risk. The project has 114 active blockers (21.0% of all events), which is particularly alarming given that blockers by definition prevent forward progress. The commentary recommends implementing emergency triage to distinguish must-fix issues from deferrable ones, and suggests considering a go-live date extension if issue resolution does not improve substantially.",
+      "key_facts": [
+        "238 items opened, 67 resolved in the snapshot period",
+        "Net: +171 open items",
+        "Resolution rate: 12.4%",
+        "475 items open or in progress (87.6%)",
+        "114 active blockers (21.0% of all events)",
+        "Issue accumulation exceeds resolution capacity"
+      ]
+    },
+    {
+      "id": "Q07",
+      "category": "Quality Issues",
+      "difficulty": "explanatory",
+      "evaluation_focus": ["completeness", "accuracy"],
+      "question": "What quality and billet specification issues could cause mill downtime, and what is the scale of MSP-related defects?",
+      "reference_answer": "Three key quality and specification issues threaten production continuity: (1) Billet Specification Blocking (Note N-218) - the system blocks picking for billets that meet customer specifications but are off-spec to the billet standard. This can cause mill downtime in scenarios where billets have already been moved to the charge bed, creating a physical-operational deadlock. (2) Quality Association Setup Gap (Note N-055) - purchase billets are missing quality orders due to improper quality association configuration, which breaks the quality control chain for incoming materials. (3) MTC Printing Variations (Note N-131) - Material Test Certificates generate different reports depending on whether access is through the ship confirm path or the material certifications page, creating inconsistency in customer-facing documents. On top of these, there is a large volume of MSP-related bugs - 312 critical events flagged to the Managed Service Partner leadership - raising serious concerns about quality workarounds and the speed of resolution. These combined issues could prevent production order fulfillment and cause customer shipment delays if not resolved before cutover.",
+      "key_facts": [
+        "Billet spec blocking picking when charge bed billets are off billet-standard (N-218)",
+        "Missing quality orders for purchase billets (N-055)",
+        "MTC printing inconsistency: ship confirm vs certifications page (N-131)",
+        "MSP bugs: 312 critical events",
+        "Risk: mill downtime and customer shipment delays"
+      ]
+    },
+    {
+      "id": "Q08",
+      "category": "Workstream Distribution",
+      "difficulty": "analytical",
+      "evaluation_focus": ["accuracy", "relevance"],
+      "question": "How is activity distributed across workstreams and what does this reveal about project priorities and gaps?",
+      "reference_answer": "Activity across workstreams from 542 total events breaks down as: Technical - 389 events (71.8%); Organisation - 71 events (13.1%); Finance - 39 events (7.2%); Supply Chain - 26 events (4.8%); Quality - 10 events (1.8%); Planning - 4 events (0.7%); MSP, Operations, and PMO - 1 event each (0.2% each). The dominant Technical workstream (71.8%) reflects the intensive integration bug-fixing and Atlas/MES/EDI resolution work in the pre-go-live phase. While this concentration is expected for a technical implementation phase, it presents two concerns for an executive audience: (a) the Finance workstream at only 7.2% is underrepresented despite Finance activities being flagged as critical risk for furnace restart (inventory counts, cost roll), and (b) Quality at 1.8% is low relative to the volume of quality-related bugs (312 MSP critical events) documented elsewhere. This workstream skew was noted as a known limitation - the dashboard deliberately summarizes technical issues into business impact statements to rebalance the executive narrative.",
+      "key_facts": [
+        "Technical: 71.8% (389 events)",
+        "Organisation: 13.1% (71 events)",
+        "Finance: 7.2% (39 events)",
+        "Supply Chain: 4.8% (26 events)",
+        "Quality: 1.8% (10 events)",
+        "Finance underrepresented despite being high risk",
+        "Quality low vs actual MSP bug volume"
+      ]
+    },
+    {
+      "id": "Q09",
+      "category": "Tag Processing Performance",
+      "difficulty": "factual",
+      "evaluation_focus": ["accuracy", "specificity"],
+      "question": "What is the specific performance issue with tag processing, and what resolution has been proposed?",
+      "reference_answer": "Tag processing is experiencing a critical performance bottleneck where processing 10 tags takes approximately 25 minutes (Note N-007, filed as a high-priority blocker in the Technical workstream). This issue was identified during UAT testing from source file 'Northwind-Jan 9/Bug Triage Meeting (3).txt', with Raj Pillai and Dana Whitfield as the key stakeholders. The team's proposed resolution is to implement a performance improvement targeting 5 minutes for 5 tags - approximately a 60% reduction from the current rate - with retesting scheduled for the following Monday. The issue is currently in-progress status. Given the tag processing function's role in production scheduling and MES integration, this performance gap is classified as a blocker for go-live.",
+      "key_facts": [
+        "Current performance: 25 minutes for 10 tags",
+        "Target: 5 minutes for 5 tags",
+        "Status: in-progress, retesting required Monday",
+        "Classification: high-priority blocker, Technical workstream",
+        "Note ID: N-007",
+        "Stakeholders: Raj Pillai, Dana Whitfield"
+      ]
+    },
+    {
+      "id": "Q10",
+      "category": "Risk Register",
+      "difficulty": "explanatory",
+      "evaluation_focus": ["completeness", "accuracy"],
+      "question": "What are the top risks on the project risk register and how are they being mitigated?",
+      "reference_answer": "The risk register currently tracks 24 identified risks, of which four are rated high-severity: (1) Environment Upgrade Risk (N-335) - the potential MES-Atlas production environment upgrade carries a 3-week lead time that, if triggered after February 2nd, would push go-live past the February 16th target; mitigation is an early go/no-go on the upgrade decision. (2) EDI Customer Readiness (N-340) - four EDI customers have incomplete integrations; mitigation is a phased EDI go-live and a customer communication plan. (3) Finance Cutover Risk (N-244) - inventory counts and cost roll could delay furnace restart; mitigation is a finance confidence assessment presented to the steering committee. (4) Resource Saturation (N-029) - the PMO function shows single-point-of-dependency concentration; mitigation is evaluating additional Managed Service Partner resources. The commentary notes that 3 of the 4 high risks share a common root cause - schedule compression against a fixed go-live date - and recommends the steering committee explicitly decide its risk tolerance before the February 2nd gate.",
+      "key_facts": [
+        "24 total risks; 4 rated high-severity",
+        "Environment upgrade risk: 3-week lead time vs Feb 16 target",
+        "EDI customer readiness risk (4 customers)",
+        "Finance cutover risk (inventory counts, cost roll)",
+        "Resource saturation / PMO single-point dependency",
+        "Common root cause: schedule compression against fixed date"
+      ]
+    },
+    {
+      "id": "Q11",
+      "category": "Data Migration Readiness",
+      "difficulty": "factual",
+      "evaluation_focus": ["accuracy", "specificity"],
+      "question": "What is the status of data migration readiness and which data domains remain unvalidated?",
+      "reference_answer": "Data migration is partially validated as of the snapshot. Of 11 master data domains, 6 have passed validation (customers, vendors, materials, BOMs, routings, and warehouses), while 5 remain unvalidated: open sales orders, open purchase orders, on-hand inventory, costing data, and quality specifications (Note N-411). The on-hand inventory and costing domains are the highest concern because they directly gate the finance cutover activities (inventory counts and cost roll). Phased master data loading is scheduled throughout January per the Mock 2 approval. A reconciliation report comparing legacy extract counts against Atlas load counts is being produced by Nina Kowalski (Business Analyst), with a target of 100% row-count parity before the February 2nd gate. The current parity stands at approximately 84% across loaded domains.",
+      "key_facts": [
+        "6 of 11 master data domains validated",
+        "5 unvalidated: open SOs, open POs, on-hand inventory, costing, quality specs",
+        "Inventory and costing are highest concern (gate finance cutover)",
+        "Reconciliation target: 100% row-count parity",
+        "Current parity: ~84%",
+        "Note ID: N-411"
+      ]
+    },
+    {
+      "id": "Q12",
+      "category": "Training Readiness",
+      "difficulty": "explanatory",
+      "evaluation_focus": ["completeness", "relevance"],
+      "question": "What is the state of end-user training readiness and what risks could disrupt the training schedule?",
+      "reference_answer": "End-user training is at moderate risk. Training delivery is scheduled to run from mid-January through early February, but three factors threaten the schedule (Note N-372): (1) ongoing bugs and configuration changes mean training environments do not yet reflect final-state configuration, risking rework of training materials; (2) Business Process Owner bandwidth (Sofia Reyes) is stretched between cutover validation and training delivery simultaneously; and (3) training content for the EDI and quality-certificate workflows is blocked pending resolution of the EDI integration gaps. As of the snapshot, 9 of 14 planned training sessions have materials finalized, and 5 remain in draft. The commentary recommends freezing the training environment configuration by a defined date and assessing whether additional facilitators are required to protect the schedule.",
+      "key_facts": [
+        "Training runs mid-January to early February",
+        "Training environment not yet at final-state config",
+        "BPO bandwidth stretched (cutover + training)",
+        "EDI/quality-cert training blocked by integration gaps",
+        "9 of 14 sessions finalized, 5 in draft",
+        "Note ID: N-372"
+      ]
+    },
+    {
+      "id": "Q13",
+      "category": "Code Freeze & Deferred Bugs",
+      "difficulty": "analytical",
+      "evaluation_focus": ["accuracy", "relevance"],
+      "question": "How well is the code freeze being observed, and what is the scale and risk of deferred bugs?",
+      "reference_answer": "Code freeze compliance is weak. Although a code freeze was declared effective January 12th (Note N-356), 7 deployments were still planned or executed after the freeze date, indicating the freeze is being treated as advisory rather than binding. In parallel, 38 bugs have been formally deferred to post-go-live hypercare, of which 9 are rated high-severity - a concern because deferring high-severity defects shifts risk into the production stabilization window rather than eliminating it. The analytical view is that the combination of a porous code freeze and a growing high-severity deferral backlog signals the project is absorbing schedule pressure by relaxing quality gates. The commentary recommends that the steering committee define explicit, written deferral criteria and require sign-off for any post-freeze deployment, so that exceptions are deliberate decisions rather than defaults.",
+      "key_facts": [
+        "Code freeze effective January 12th (N-356)",
+        "7 deployments planned/executed post-freeze",
+        "38 bugs deferred to post-go-live",
+        "9 of deferred bugs are high-severity",
+        "Risk: quality gates relaxed under schedule pressure",
+        "Recommendation: written deferral criteria + sign-off"
+      ]
+    },
+    {
+      "id": "Q14",
+      "category": "Mandatory Toggle Bug",
+      "difficulty": "factual",
+      "evaluation_focus": ["accuracy", "specificity"],
+      "question": "What is the mandatory toggle bug affecting produced tag attributes and what elements are incorrectly configured?",
+      "reference_answer": "The mandatory toggle bug (Note N-011) affects produced billet tag attributes in Atlas ERP. Testing revealed that mandatory toggles are incorrectly set on produced billets - specifically, elements such as Vanadium (V), Molybdenum (Mo), and Chromium (Cr) are flagged as mandatory when they should not be. This configuration error means that production orders for billets not containing these trace elements cannot be completed without data entry for fields that are not applicable to the product specification, creating a workflow blocker in production order fulfillment. This is related to Notes N-002 and N-003 which cover MTC printing and additional mandatory toggle testing, and is sourced from the bug report 'Testing Bug -188201-Mandatory toggle missing on produced tags.txt'. The issue is classified as a high-priority concern in the Technical workstream.",
+      "key_facts": [
+        "Mandatory toggles incorrectly set on produced billets",
+        "Affected elements: Vanadium, Molybdenum, Chromium",
+        "Elements flagged mandatory when they should not be",
+        "Source: Bug 188201",
+        "Note ID: N-011",
+        "Related notes: N-002, N-003 (MTC printing)"
+      ]
+    },
+    {
+      "id": "Q15",
+      "category": "Resource Pressures",
+      "difficulty": "explanatory",
+      "evaluation_focus": ["completeness", "relevance"],
+      "question": "What resource and scheduling pressures is the team facing in the pre-go-live period?",
+      "reference_answer": "The team is operating under multiple simultaneous resource and schedule pressures: (1) UAT Testing velocity has 'slowed to a crawl' and requires acceleration (Note N-031), with this being one of the last weeks of testing and requiring urgent bug closure. (2) Holiday schedule constraints - lingering New Year staffing impacts with offshore partners returning late are reducing resolution capacity (Note N-027). (3) Training delivery risk - ongoing bugs and configuration issues are creating downstream blocking effects for training sessions, with training still running through early February (Note N-372). (4) Competing priorities - Business Process Owner bandwidth is being stretched between cutover activities and training delivery simultaneously. (5) Stakeholder overload - PMO Lead Dana Whitfield appears in 241 mentions across the dataset, suggesting a single point of coordination dependency. The commentary recommends evaluating whether additional Managed Service Partner resources are needed for bug closure and assessing BPO bandwidth for training alongside cutover, with a resource rebalancing plan presented at the next steering committee meeting.",
+      "key_facts": [
+        "UAT testing velocity slowed to a crawl (N-031)",
+        "Holiday staffing constraints: offshore partners returning late (N-027)",
+        "Training delivery blocked by ongoing bugs (N-372)",
+        "BPO bandwidth stretched: cutover + training simultaneously",
+        "Dana Whitfield: 241 mentions (coordination bottleneck risk)"
+      ]
+    },
+    {
+      "id": "Q16",
+      "category": "EDI Customer Issue",
+      "difficulty": "factual",
+      "evaluation_focus": ["accuracy", "specificity"],
+      "question": "What is the specific nature of the Cardinal Wire 863 EDI file integration failure and what risk does it pose?",
+      "reference_answer": "The Cardinal Wire 863 EDI mapping failure (Note N-512) involves critical mapping discrepancies between the staging test environment and the production environment for the Cardinal Wire 863 transaction set. The 863 transaction set is used for report of testing results (quality certificates), and mismatches between environments mean that the EDI outputs generated during testing do not replicate correctly in production. This exposes the risk of mismatched Material Test Certificates being sent to customers versus the actual shipment content - a compliance and quality assurance failure that could lead to customer complaints, rejected shipments, or potential regulatory issues. Combined with the broader EDI design gap where product-specific chemistry requirements are not supported (Note N-206), Cardinal Wire is one of four EDI customers (along with Brookline Metals, Vantage Steel, and Tessa Industrial) whose integrations are incomplete. The recommended action is an EDI customer communication plan and phased go-live approach for EDI customers to reduce simultaneous integration risk.",
+      "key_facts": [
+        "Cardinal Wire 863: mapping discrepancies between staging and production",
+        "863 transaction = quality certificate / test results",
+        "Risk: mismatched certificates vs actual shipments",
+        "Note: N-512",
+        "Other affected EDI customers: Brookline Metals, Vantage Steel, Tessa Industrial",
+        "Recommended: phased go-live for EDI customers"
+      ]
+    },
+    {
+      "id": "Q17",
+      "category": "Sentiment & Team Morale",
+      "difficulty": "analytical",
+      "evaluation_focus": ["accuracy", "relevance"],
+      "question": "What is the overall project sentiment and what does it reveal about team dynamics and project culture?",
+      "reference_answer": "The overall project sentiment is Neutral at -0.04 on a -1.0 to +1.0 normalized scale. This near-zero score represents a delicate balance: on the negative side, the team is dealing with 114 active blockers, a 12.4% resolution rate, and multiple critical integration failures; on the positive side, there are positive signals from Mock 2 approval, active governance with 96 decisions, clear cutover planning, and strong stakeholder engagement. The neutral sentiment in this context is arguably better than expected given the critical health score (46.5). It suggests the team remains professionally engaged and solution-focused despite significant pressure, rather than exhibiting pessimism or disengagement. The transcripts show active, constructive participation from technical leads (Arjun Mehta, Lena Fischer) and PMO (Dana Whitfield) even while discussing critical problems. The high decision count (17.7% of events) and commitment count (48 events, 8.9%) further indicate a team that, while under pressure, is still driving accountability and forward progress.",
+      "key_facts": [
+        "Overall sentiment: Neutral (-0.04)",
+        "Scale: -1.0 to +1.0 normalized",
+        "Neutral despite critical health score (46.5)",
+        "High decision velocity signals engaged governance",
+        "48 commitments (8.9%) show accountability culture",
+        "Team professionally engaged despite high pressure"
+      ]
+    },
+    {
+      "id": "Q18",
+      "category": "Executive Recommendations",
+      "difficulty": "analytical",
+      "evaluation_focus": ["completeness", "relevance"],
+      "question": "What are the most critical immediate actions the executive team should take to protect the February 16, 2026 go-live date?",
+      "reference_answer": "Based on the project data, three immediate executive actions are required within the next 48 hours: (1) Emergency Integration Review - convene technical leadership (Arjun Mehta and Lena Fischer) to assess whether the MES-Atlas performance issues require an environment upgrade. If an upgrade is needed (3-week lead time), this requires an immediate steering committee decision, as waiting would push go-live past February 16. (2) Issue Velocity Intervention - Dana Whitfield (PMO Lead) should implement a daily triage process to categorize the 475+ open items into 'must-fix before go-live' versus 'deferrable,' with explicit steering committee approval on deferral criteria. The goal should be reducing net open items by 50% within one week. (3) Finance Activity Risk Assessment - Tomas Silva and Nina Kowalski should present a confidence assessment on inventory counts and cost roll completion to the steering committee by Friday, with contingency plans if these activities are delayed. In parallel, the steering committee should formally define 'stop-ship' criteria - specific issues whose non-resolution would mandate postponing the February 2nd final go/no-go approval - and begin post-go-live hypercare planning including war room setup and support transition, targeted for completion by February 9.",
+      "key_facts": [
+        "Action 1: Emergency integration review (MES-Atlas upgrade decision)",
+        "Action 2: Issue velocity triage owned by Dana Whitfield",
+        "Action 3: Finance risk assessment by Tomas Silva",
+        "Define stop-ship criteria for February 2nd gate",
+        "Post-go-live hypercare plan due February 9",
+        "Owner for hypercare: Dana Whitfield + Brett Lawson"
+      ]
+    }
+  ]
+}

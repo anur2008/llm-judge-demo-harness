@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "project": "Atlas ERP Implementation - Northwind Steelworks",
+    "purpose": "SYNTHETIC candidate answers to be scored by the LLM-as-judge harness during the demo. Designed with a deliberate score spread: strong answers, partial answers, and wrong-but-fluent plants. The 'demo_note' field is for the speaker's rehearsal only and is NOT sent to the judge.",
+    "generated": "2026-06-15",
+    "scoring_guidance": "The harness sends only: question, reference_answer, key_facts, and answer_under_test. It must NOT send demo_note or expected_band to the judge."
+  },
+  "candidate_answers": [
+    {
+      "id": "Q01",
+      "answer_under_test": "The Atlas ERP implementation is in solid shape, with a health score of 78 out of 100, placing it comfortably in the Stable range. The project is broadly on track for go-live, with the majority of work items progressing well and only a handful of minor blockers outstanding. Executive sentiment is positive and the team expects to hit the target date without major intervention.",
+      "expected_band": "1-2 (wrong)",
+      "demo_note": "PLANT - THE MONEY MOMENT. Fluent, confident, well-structured prose. Completely inverts the truth: claims 78/100 Stable when golden says 46.5/100 Critical, claims 'handful of minor blockers' when there are 114. This is the 'valid, fluent, well-formed output that's still wrong' from takeaway #2. A schema/format check would pass this; only ground-truth comparison catches it."
+    },
+    {
+      "id": "Q02",
+      "answer_under_test": "The main integration problem is the MES-Atlas performance issue, where the integration is seeing delays of around 9 minutes that affect scheduling and tag attributes. The team is looking at whether a production environment upgrade is needed, which would take about 3 weeks. This is the primary integration risk to go-live.",
+      "expected_band": "2-3 (partial)",
+      "demo_note": "PARTIAL - tests the 'completeness' focus. Accurately describes the MES-Atlas issue (one of three) but omits the EDI integration gaps and the MRP/sales-order disconnect entirely. Facts present are correct, but it covers ~1 of 3 problem areas. Should score mid on completeness, high on accuracy. Good contrast with the Q01 plant: this one is honest but incomplete."
+    },
+    {
+      "id": "Q03",
+      "answer_under_test": "The Mock 2 Go/No-Go was unanimously approved by the steering committee (Note N-388), covering Northwind legal entity configurations, production copy to UAT, and phased master data loading through January. Notably, the approval was granted despite open critical bugs, reflecting a high risk tolerance driven by pressure to hold the February 16, 2026 go-live. It set a three-stage gate: Mock 2 (done, January 5th), late-January transactional validation, and a February 2nd final decision point.",
+      "expected_band": "5 (strong)",
+      "demo_note": "STRONG - hits all key facts: unanimous approval, despite open bugs, three-stage gate with correct dates, Feb 16 go-live, scope. Should score 5. Use as the 'clean pass' opening beat of the demo."
+    },
+    {
+      "id": "Q04",
+      "answer_under_test": "Cutover planning is underway with 198 tasks initiated and 14 completed as of the snapshot. Reviews happen twice a week. Configuration activities started January 9th as day one of cutover, with data migration scheduled for early the following week. Finance activities - inventory counts and cost roll - are flagged as the highest-risk items that could prevent furnace restart.",
+      "expected_band": "5 (strong)",
+      "demo_note": "STRONG - all key facts present and accurate (198 initiated, 14 done, twice-weekly, Jan 9 day-1, finance highest risk). Should score 5. A second clean pass if you want two strong examples before the catch."
+    },
+    {
+      "id": "Q05",
+      "answer_under_test": "The most engaged stakeholders by mention count are Dana Whitfield (PMO Lead) with by far the most mentions, followed by Arjun Mehta (Technical Lead) and Lena Fischer (Integration Lead). Paul Brennan (Project Lead) and Sofia Reyes (Business Process Owner) round out the top five. The pattern shows engagement concentrated in PMO coordination, technical bug resolution, and integration - which maps directly onto the project's biggest problem areas.",
+      "expected_band": "4 (strong, slightly imprecise)",
+      "demo_note": "STRONG but not specific on numbers - names and ordering correct, relevance insight correct, but omits the exact mention counts (241, 96, 88...). Tests 'specificity': should score 4, not 5, because the golden answer is number-precise and this is qualitative. Good for showing the judge rewards specificity."
+    },
+    {
+      "id": "Q06",
+      "answer_under_test": "The trend is actually encouraging: the resolution rate has climbed to around 24%, and the team resolved more items than it opened during the snapshot, producing a net reduction in open items. With blockers being closed faster than they appear, the February 16 go-live looks increasingly achievable on current velocity.",
+      "expected_band": "1-2 (wrong)",
+      "demo_note": "PLANT - THE SUBTLE CATCH. Fluent and plausible, but factually inverted: golden says resolution rate 12.4% (not 24%), net +171 ACCUMULATION (not reduction), velocity unsustainable (not encouraging). Harder to spot than Q01 because it's about a trend direction. Great second demo plant if you want to show the judge catching a subtle numeric/directional hallucination, not just an obvious one."
+    },
+    {
+      "id": "Q07",
+      "answer_under_test": "Several quality issues could cause mill downtime, including billet specification blocking that stops picking for billets off-spec to the billet standard, and a quality association setup gap leaving purchase billets without quality orders. There are also MTC printing inconsistencies between the ship confirm path and the certifications page. A significant volume of MSP-flagged critical bugs adds to the concern about resolution speed before cutover.",
+      "expected_band": "4-5 (strong)",
+      "demo_note": "STRONG - covers all three quality issues plus the MSP bug volume qualitatively. Slightly soft on the exact MSP number (312). Should score 4-5. Demonstrates a complete explanatory answer."
+    },
+    {
+      "id": "Q08",
+      "answer_under_test": "Activity is heavily concentrated in the Technical workstream at roughly 72% of all events, with Organisation a distant second around 13%. Finance, Supply Chain, and Quality make up small single-digit shares. The notable gaps: Finance is underrepresented despite being a critical furnace-restart risk, and Quality looks low relative to the actual volume of quality bugs flagged to the MSP.",
+      "expected_band": "4-5 (strong)",
+      "demo_note": "STRONG - accurate distribution and both analytical insights (Finance underrepresented, Quality low vs bug volume). Rounds rather than giving exact counts. Should score 4-5."
+    },
+    {
+      "id": "Q09",
+      "answer_under_test": "Tag processing currently takes about 25 minutes for 10 tags, which is a high-priority blocker in the Technical workstream (Note N-007). The proposed fix targets 5 minutes for 5 tags, with retesting the following Monday. It's in progress. Because tag processing feeds production scheduling and MES integration, it's treated as a go-live blocker.",
+      "expected_band": "5 (strong)",
+      "demo_note": "STRONG - all key facts correct (25 min/10 tags, target 5/5, in-progress, blocker, N-007). Should score 5."
+    },
+    {
+      "id": "Q10",
+      "answer_under_test": "The risk register has a number of risks, the biggest being around the environment upgrade and EDI customer readiness. The team is working on mitigations for these. There are also some finance and resourcing concerns being tracked.",
+      "expected_band": "2-3 (partial / vague)",
+      "demo_note": "PARTIAL/VAGUE - tests completeness and specificity. Gestures at 2 of 4 high risks without detail, omits the 3-week lead time, the count (24 risks / 4 high), the common-root-cause insight, and the mitigations. Should score 2-3. Shows the judge penalizing vagueness even when nothing is strictly 'wrong'."
+    },
+    {
+      "id": "Q11",
+      "answer_under_test": "Data migration is partially validated: 6 of 11 master data domains have passed, with 5 still unvalidated including open sales orders, open purchase orders, on-hand inventory, costing, and quality specifications. Inventory and costing are the biggest concern because they gate finance cutover. Row-count parity is around 84% against a 100% target, with reconciliation owned by Nina Kowalski.",
+      "expected_band": "5 (strong)",
+      "demo_note": "STRONG - all key facts present (6/11, the 5 unvalidated domains, inventory/costing concern, 84% vs 100%, owner). Should score 5."
+    },
+    {
+      "id": "Q12",
+      "answer_under_test": "Training is in good shape and on track. All sessions are prepared and the environment reflects final configuration, so there are no material risks to the training schedule heading into go-live.",
+      "expected_band": "1-2 (wrong)",
+      "demo_note": "PLANT (optional third) - contradicts golden: training is at MODERATE RISK, environment NOT at final config, only 9 of 14 sessions finalized, EDI/quality training blocked. Confident false 'all clear.' Another wrong-but-fluent example if you want variety; otherwise hold in reserve."
+    },
+    {
+      "id": "Q13",
+      "answer_under_test": "Code freeze compliance is weak. Although the freeze took effect January 12th (N-356), 7 deployments were still planned or carried out afterward, so it's effectively advisory. Meanwhile 38 bugs have been deferred to post-go-live, 9 of them high-severity, which pushes risk into the stabilization window. The pattern suggests quality gates are being relaxed under schedule pressure.",
+      "expected_band": "5 (strong)",
+      "demo_note": "STRONG - all key facts correct (Jan 12, 7 post-freeze deployments, 38 deferred, 9 high-severity, analytical insight). Should score 5."
+    },
+    {
+      "id": "Q14",
+      "answer_under_test": "The mandatory toggle bug (N-011) incorrectly flags certain trace elements as mandatory on produced billets - specifically Vanadium, Manganese, and Chromium. Because of this, production orders for billets without those elements can't be completed, creating a workflow blocker. It's a high-priority Technical issue linked to MTC printing notes.",
+      "expected_band": "3 (partial - one wrong fact)",
+      "demo_note": "PARTIAL with an embedded error - mostly correct but says 'Manganese' where the golden specifies 'Molybdenum' (V, Mo, Cr). Tests whether the judge catches a single substituted fact inside an otherwise-good answer. Should score ~3 and the reason should name the wrong element. Excellent for showing fact-level precision."
+    },
+    {
+      "id": "Q15",
+      "answer_under_test": "The team faces several pressures: UAT testing has slowed and needs to accelerate, holiday/offshore staffing has reduced capacity, training delivery is being squeezed by ongoing bugs, and the BPO is split between cutover and training. On top of that, PMO coordination is heavily concentrated in one person (Dana Whitfield, 241 mentions), creating a bottleneck risk.",
+      "expected_band": "5 (strong)",
+      "demo_note": "STRONG - all five pressure points covered. Should score 5."
+    },
+    {
+      "id": "Q16",
+      "answer_under_test": "The Cardinal Wire 863 EDI failure (N-512) is a mapping discrepancy between staging and production for the 863 transaction set, which carries quality-certificate / test-result data. The risk is that certificates sent to customers won't match actual shipments - a compliance and quality issue. Cardinal Wire is one of four affected EDI customers alongside Brookline Metals, Vantage Steel, and Tessa Industrial. Recommended mitigation is a phased EDI go-live.",
+      "expected_band": "5 (strong)",
+      "demo_note": "STRONG - all key facts correct. Should score 5."
+    },
+    {
+      "id": "Q17",
+      "answer_under_test": "Overall sentiment is roughly neutral, slightly negative, which given the critical health score is arguably better than expected. It points to a team that's still engaged and solution-focused under pressure rather than disengaged, supported by active governance and a healthy decision and commitment count.",
+      "expected_band": "4 (strong, imprecise)",
+      "demo_note": "STRONG but imprecise - correct interpretation and relevance, but omits the exact -0.04 figure and the scale. Tests specificity on an analytical question. Should score 4."
+    },
+    {
+      "id": "Q18",
+      "answer_under_test": "The executive team should move on three fronts immediately: (1) an emergency integration review with technical leads to decide on the MES-Atlas environment upgrade before the 3-week lead time makes it impossible; (2) a daily issue-triage process led by Dana Whitfield to split open items into must-fix versus deferrable, aiming to cut net open items by half in a week; and (3) a finance confidence assessment on inventory counts and cost roll by Friday. They should also define explicit stop-ship criteria for the February 2nd gate and stand up post-go-live hypercare planning.",
+      "expected_band": "5 (strong)",
+      "demo_note": "STRONG - all three actions plus stop-ship criteria and hypercare. Should score 5. Good closing example to end the demo on a high note after the catch."
+    }
+  ]
+}

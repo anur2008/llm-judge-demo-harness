@@ -1,0 +1,7 @@
+judge_results.json
+.venv/
+__pycache__/
+.env
+credentials
+.aws/
+.idea/
