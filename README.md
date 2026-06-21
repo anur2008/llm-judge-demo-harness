@@ -1,8 +1,7 @@
 # LLM-as-Judge Demo Harness
 
 A small, self-contained harness that scores AI-generated answers against a
-golden reference set using **Claude on Amazon Bedrock**. Built for a live
-conference demo. One dependency: `boto3`.
+golden reference set using **Claude on Amazon Bedrock**. One dependency: `boto3`.
 
 ## Files
 - `judge_harness.py` - the harness (reads the two JSON files, calls Bedrock, prints a scored table)
