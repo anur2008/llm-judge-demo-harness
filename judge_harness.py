@@ -6,11 +6,8 @@ Reads a golden Q&A set and a file of candidate answers, asks Claude on
 Amazon Bedrock to score each answer against the reference, and prints a
 scored table: overall score + per-criterion breakdown + a one-line reason.
 
-Built for a live conference demo. Dependencies: boto3 only.
-
 WHAT THE JUDGE SEES (and does NOT):
   Sent to the judge -> question, reference_answer, key_facts, answer_under_test
-  NEVER sent        -> demo_note, expected_band   (those are speaker-only)
 
 QUICK START
   pip install boto3
@@ -91,7 +88,7 @@ def verdict_colour(v):
     return {"PASS": C.GREEN, "PARTIAL": C.AMBER, "FAIL": C.RED}.get(v, C.GREY)
 
 # ----------------------------------------------------------------------
-# Build the judge prompt  (demo_note / expected_band are never referenced)
+# Build the judge prompt
 # ----------------------------------------------------------------------
 def build_judge_prompt(q, answer_under_test):
     focus = q.get("evaluation_focus", ["accuracy", "completeness"])
@@ -198,7 +195,7 @@ def render_summary(results):
     print(col("─" * 70, C.GREY))
 
 def render_calibration(results):
-    """Rehearsal aid only: compare judge verdict to the speaker's expected_band."""
+
     def band_to_bucket(band):
         n = int(re.search(r"\d", band).group(0))
         return "FAIL" if n <= 2 else "PARTIAL" if n == 3 else "PASS"
@@ -277,8 +274,7 @@ def main():
         q = golden.get(cand["id"])
         if not q:
             continue
-        # ---- demo_note / expected_band are read here for the SPEAKER only,
-        # ---- and are never placed into the judge prompt.
+
         expected_band = cand.get("expected_band")
 
         if args.dry_run:
@@ -307,7 +303,7 @@ def main():
     if args.rehearsal:
         render_calibration(results)
 
-    # persist results (without speaker-only fields) for slides / screenshots
+
     dump = [{"id": r["q"]["id"], "category": r["q"]["category"],
              "overall": r["result"].get("overall"),
              "criteria": r["result"].get("criteria", {}),
